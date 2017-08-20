@@ -37,23 +37,7 @@
   }
 
 
- function phoneValidation(){
-   //Mobile Validation
-   var phone = document.getElementById('phone').value;
- if(phone == "")
- {
- alert("Please Enter Correct Phone Number");
- document.getElementById('phone').focus();
- return false;
- }
- if(isNaN(a))
- {
- alert("Please Enter Correct Phone Number");
- document.getElementById('phone').focus();
- return false;
- }
- }
-
+ 
 
   //Reference message collection
   var messageRef = firebase.database().ref('messages');
@@ -62,6 +46,7 @@
 
 
 document.getElementById('contactForm').addEventListener('submit',submitForm);
+
 
 function submitForm(e){
   e.preventDefault();
@@ -76,15 +61,17 @@ function submitForm(e){
 
 
   //Show alert on form submition
-  if(!ValidateContactForm){
+  
+  
   document.querySelector('.alert').style.display = 'block';
-}
+
   //Hide alert after 8 seconds
   setTimeout(function(){
     $('.alert').fadeOut();
   },8000);
 
 }
+
 
 function getValues(id){
         return document.getElementById(id).value;
